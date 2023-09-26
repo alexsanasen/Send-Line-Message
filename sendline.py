@@ -24,6 +24,6 @@ def _lineNotify(payload,file=None):
     headers = {'Authorization':'Bearer '+token}
     return requests.post(url, headers=headers , data = payload, files=file)
 
-lineNotify('ข้อความ')
-notifySticker(11,1)
+lineNotify('Hello World')
+notifySticker(10,1)
 #notifyPicture("ที่อยู่รูปภาพ")
