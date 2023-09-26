@@ -7,6 +7,7 @@ def lineNotify(message):
     return _lineNotify(payload)
 
 #Sticker
+#URL: https://developers.line.biz/en/docs/messaging-api/sticker-list/
 def notifySticker(stickerID,stickerPackageID):
     payload = {'message':" ",'stickerPackageId':stickerPackageID,'stickerId':stickerID}
     return _lineNotify(payload)
@@ -24,6 +25,8 @@ def _lineNotify(payload,file=None):
     headers = {'Authorization':'Bearer '+token}
     return requests.post(url, headers=headers , data = payload, files=file)
 
-lineNotify('Hello World')
-notifySticker(10,1)
+mymessage = "Hello World"
+
+lineNotify(mymessage)
+notifySticker(11088016,6370)
 #notifyPicture("ที่อยู่รูปภาพ")
