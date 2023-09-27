@@ -10,5 +10,7 @@ url = 'https://v6.exchangerate-api.com/v6/287aeae054b3dbf60085bd87/pair/CAD/THB'
 response = requests.get(url)
 data = response.json()
 
-# Your JSON object
-print (data)
+# Extract and print the conversion_rate
+conversion_rate = data['conversion_rate']
+cad2thb = print(f'$1 CAD = {conversion_rate} THB')
+print (cad2thb)
