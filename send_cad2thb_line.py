@@ -3,9 +3,10 @@
 
 import requests
 import os
+from datetime import datetime
 
-KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
-KEY_LINETOKEN = os.environ.get('KEY_LINETOKEN')
+#KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
+#KEY_LINETOKEN = os.environ.get('KEY_LINETOKEN')
 
 # Get Exchange Rate CAD:THB
 url = 'https://v6.exchangerate-api.com/v6/287aeae054b3dbf60085bd87/pair/CAD/THB'
@@ -14,9 +15,12 @@ url = 'https://v6.exchangerate-api.com/v6/287aeae054b3dbf60085bd87/pair/CAD/THB'
 response = requests.get(url)
 data = response.json()
 
+# Get the current date and format it
+today_date = datetime.now().strftime('%B %d, %Y')
+
 # Extract and print the conversion_rate
 conversion_rate = data['conversion_rate']
-cad2thb = f'$1 CAD = {conversion_rate} THB'
+cad2thb = f"\n{today_date}\n$1 CAD = {conversion_rate} THB"
 
 # Line: Message Function
 def lineNotify(message):
