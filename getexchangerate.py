@@ -11,6 +11,9 @@ response = requests.get(url)
 data = response.json()
 
 # Extract and print the conversion_rate
-conversion_rate = data['conversion_rate']
-cad2thb = print(f'$1 CAD = {conversion_rate} THB')
-print (cad2thb)
+# conversion_rate = data['conversion_rate']
+# cad2thb = print(f'$1 CAD = {conversion_rate} THB')
+# print (cad2thb)
+
+#Print all JSON data
+print data
