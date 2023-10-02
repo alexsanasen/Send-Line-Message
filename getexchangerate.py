@@ -16,4 +16,4 @@ data = response.json()
 # print (cad2thb)
 
 #Print all JSON data
-print data
+print (data)
