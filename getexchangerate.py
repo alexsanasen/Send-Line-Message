@@ -15,5 +15,9 @@ data = response.json()
 # cad2thb = print(f'$1 CAD = {conversion_rate} THB')
 # print (cad2thb)
 
-#Print all JSON data
+# #Print time_last_update_utc
+# time_utc = data['time_last_update_utc']
+# print (time_utc)
+
+#Print JSON data
 print (data)
