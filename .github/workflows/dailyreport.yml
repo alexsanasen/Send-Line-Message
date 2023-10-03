@@ -17,5 +17,8 @@ jobs:
         with:
           python-version: 3.x
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      
       - name: Run Python script
         run: python send_cad2thb_line.py
