@@ -5,6 +5,7 @@ import requests
 import os
 from datetime import datetime
 
+#Github Action secrets
 KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
 KEY_LINETOKEN = os.environ.get('KEY_LINETOKEN')
 
