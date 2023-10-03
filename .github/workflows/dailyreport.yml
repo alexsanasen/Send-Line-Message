@@ -1,0 +1,21 @@
+name: dailyreport
+
+on:
+ schedule:
+   - cron: '0 */6 * * *'
+ workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Run Python script
+        run: python send_cad2thb_line.py
