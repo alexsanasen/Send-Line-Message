@@ -4,6 +4,7 @@
 import requests
 import os
 from datetime import datetime
+import pytz
 
 #Github Action secrets
 KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
