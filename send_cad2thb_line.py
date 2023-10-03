@@ -16,8 +16,11 @@ url = f'https://v6.exchangerate-api.com/v6/{KEY_EXCHANGERATE}/pair/CAD/THB'
 response = requests.get(url)
 data = response.json()
 
+# Specify the PST timezone
+pst_timezone = pytz.timezone('US/Pacific')
+
 # Get the current date and format it
-today_date = datetime.now().strftime('%b %d, %Y @ %H:%M')
+today_date = datetime.now(pst_timezone).strftime('%b %d, %Y PST@ %H:%M')
 
 # Extract and print the conversion_rate
 conversion_rate = data['conversion_rate']
