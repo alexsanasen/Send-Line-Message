@@ -5,11 +5,12 @@ import requests
 import os
 from datetime import datetime
 
-#KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
-#KEY_LINETOKEN = os.environ.get('KEY_LINETOKEN')
+KEY_EXCHANGERATE = os.environ.get('KEY_EXCHANGERATE')
+KEY_LINETOKEN = os.environ.get('KEY_LINETOKEN')
 
 # Get Exchange Rate CAD:THB
-url = 'https://v6.exchangerate-api.com/v6/287aeae054b3dbf60085bd87/pair/CAD/THB'
+#url = 'https://v6.exchangerate-api.com/v6/287aeae054b3dbf60085bd87/pair/CAD/THB'
+url = f'https://v6.exchangerate-api.com/v6/{KEY_EXCHANGERATE}/pair/CAD/THB'
 
 # Making our request
 response = requests.get(url)
@@ -31,8 +32,8 @@ def lineNotify(message):
 def _lineNotify(payload,file=None):
     import requests
     url = 'https://notify-api.line.me/api/notify'
-    token = 'qa1OII0d4mrbIKQSHsXr5VtxiEvpcYxVgAkbAVNg2rg'
-    #token = KEY_LINETOKEN
+    #token = 'qa1OII0d4mrbIKQSHsXr5VtxiEvpcYxVgAkbAVNg2rg'
+    token = KEY_LINETOKEN
     headers = {'Authorization':'Bearer '+token}
     return requests.post(url, headers=headers , data = payload, files=file)
 

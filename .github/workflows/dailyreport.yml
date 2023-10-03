@@ -20,4 +20,7 @@ jobs:
         run: pip install -r requirements.txt
       
       - name: Run Python script
+        env:
+            KEY_EXCHANGERATE: ${{ secrets.KEY_EXCHANGERATE }}
+            KEY_LINETOKEN: ${{ secrets.KEY_LINETOKEN }}
         run: python send_cad2thb_line.py
