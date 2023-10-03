@@ -21,7 +21,7 @@ data = response.json()
 pst_timezone = pytz.timezone('US/Pacific')
 
 # Get the current date and format it
-today_date = datetime.now(pst_timezone).strftime('%b %d, %Y PST@ %H:%M')
+today_date = datetime.now(pst_timezone).strftime('%b %d, %Y @ %H:%M')
 
 # Extract and print the conversion_rate
 conversion_rate = data['conversion_rate']
