@@ -16,13 +16,11 @@ response = requests.get(url)
 data = response.json()
 
 # Get the current date and format it
-#today_date = datetime.now().strftime('%B %d, %Y')
+today_date = datetime.now().strftime('%B %d, %Y')
 
 # Extract and print the conversion_rate
 conversion_rate = data['conversion_rate']
-time_utc = data['time_last_update_utc']
-#cad2thb = f"\n{today_date}\n$1 CAD = {conversion_rate} THB"
-cad2thb = f"\n{time_utc}\n$1 CAD = {conversion_rate} THB"
+cad2thb = f"\n{today_date}\n$1 CAD = {conversion_rate} THB"
 
 # Line: Message Function
 def lineNotify(message):
