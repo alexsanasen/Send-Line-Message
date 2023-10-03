@@ -16,7 +16,7 @@ response = requests.get(url)
 data = response.json()
 
 # Get the current date and format it
-today_date = datetime.now().strftime('%B %d, %Y')
+today_date = datetime.now().strftime('%b %d, %Y @ %H:%M')
 
 # Extract and print the conversion_rate
 conversion_rate = data['conversion_rate']
