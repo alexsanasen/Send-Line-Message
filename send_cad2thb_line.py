@@ -1,5 +1,5 @@
 #Program: Send Exchange Rate CAD:THB to Line Messenger
-#Date: 2023.09.26
+#Date: 2023.11.27
 
 import requests
 import os
